@@ -9,6 +9,17 @@ const Features = () => {
   const videoRef = useRef();
   
   useGSAP(() => {
+    gsap.to('#exploreVideo', {
+      scrollTrigger: {
+        trigger: '#exploreVideo',
+        toggleActions: 'play pause reverse  restart',
+        start: '-10% bottom',
+      },
+      onComplete: () => {
+        videoRef.current.play();
+      }
+    })
+
     animateWithGsap('#features_title', {y: 0, opacity: 1})
     animateWithGsap(
       '.g_grow',
@@ -20,6 +31,8 @@ const Features = () => {
       {y: 0,opacity: 1, ease:'power2.inOut', duration: 1}
     )
   }, [])
+
+
   return (
     <section className="h-full common-padding bg-zinc relative overflow-hidden">
       <div className="screen-max-width">
