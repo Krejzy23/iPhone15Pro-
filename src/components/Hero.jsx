@@ -34,6 +34,7 @@ const Hero = () => {
         <div className="md:w-10/12 w-9/12">
           <video 
             autoPlay
+            loop
             muted
             playsInline={true}
             key={videoSrc}
